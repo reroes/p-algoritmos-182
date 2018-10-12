@@ -1209,3 +1209,7 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+.texto-pequenio{  
+  font-size: 10px;
+}
