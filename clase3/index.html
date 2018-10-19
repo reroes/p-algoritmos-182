@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PROGRAMACIÓN DE ALGORITMOS</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                                <section>    
+				<h4>Constructores</h4>
+                                    <hr />  
+                                    <small>
+                                    <ul>
+                                        <li>¿Qué pasa si usted desea proporcionar valores al momento de crear un objeto de una clase?     </li>
+                                        <li>Java requiere una llamada al constructor para cada objeto que se cre</li>
+                                        <li>La palabra clave new llama al constructor de la clase para realizar la inicialización</li>
+                                    </ul>
+
+
+                                    <p>
+					    	<small><a href="#">René Elizalde</a> / <a href="http://twitter.com/reroes">@reroes</a></small>
+				    </p>
+                                    </small>
+                                </section>    
+                                <section>    
+				<h4>Constructores</h4>
+                                    <hr />  
+                                    <small>
+                                        <ul>
+                                            <li>La llamada al constructor se indica mediante el nombre de la clase, seguido de paréntesis</li>
+                                            <li>Debe tener el mismo nombre que la clase</li>
+                                            <li>Compilador proporciona un constructor predeterminado sin parámetros</li>
+                                            <li>Cuando una clase sólo tiene el constructor predeterminado, sus variables de instancia se inicializan con sus valores predeterminados</li>
+                                        </ul>
+
+                                    <p>
+					    	<small><a href="#">René Elizalde</a> / <a href="http://twitter.com/reroes">@reroes</a></small>
+				    </p>
+                                    </small>
+                                </section>  
+				<!-- Example of nested vertical slides -->
+				<section>
+					<h3>Ejemplo</h3>
+                                        <hr />
+                                        <pre><code class="hljs" data-trim contenteditable>
+                                        
+public class LibroCalificaciones {
+
+    private String nombreDelCurso; // nombre del curso para este LibroCalificaciones
+// el constructor inicializa nombreDelCurso con el objeto String que se provee como argumento
+
+    public LibroCalificaciones(String nombre) {
+        nombreDelCurso = nombre; // inicializa nombreDelCurso
+    } // fin del constructor
+// método para establecer el nombre del curso
+
+    public void establecerNombreDelCurso(String nombre) {
+        nombreDelCurso = nombre; // almacena el nombre del curso
+    } // fin del método establecerNombreDelCurso
+// método para obtener el nombre del curso
+
+    public String obtenerNombreDelCurso() {
+        return nombreDelCurso;
+    } // fin del método obtenerNombreDelCurso
+// muestra un mensaje de bienvenida al usuario de LibroCalificaciones
+
+    public void mostrarMensaje() {
+// esta instrucción llama a obtenerNombreDelCurso para obtener el
+// nombre del curso que este LibroCalificaciones representa
+        System.out.printf("Bienvenido al Libro de calificaciones para\n % s!\n",
+                obtenerNombreDelCurso());
+    } // fin del método mostrarMensaje
+} // fin de la clase LibroCalificacione    
+
+                                        </code></pre>
+ 
+				</section>
+                                <section>
+					<h3>Ejemplo - 2</h3>
+                                        <hr />
+                                        <pre><code class="hljs" data-trim contenteditable>
+public class PruebaCalificaciones {
+// el método main empieza la ejecución del programa
+
+    public static void main(String args[]) {
+// crea objeto LibroCalificaciones
+        LibroCalificaciones libroCalificaciones1 = new LibroCalificaciones(
+                "CS101 Introduccion a la programacion en Java");
+        LibroCalificaciones libroCalificaciones2 = new LibroCalificaciones(
+                "CS102 Estructuras de datos en Java");
+// muestra el valor inicial de nombreDelCurso para cada LibroCalificaciones
+        System.out.printf("El nombre del curso de libroCalificaciones1 es: %s\n",
+                libroCalificaciones1.obtenerNombreDelCurso());
+        System.out.printf("El nombre del curso de libroCalificaciones2 es: %s\n",
+                libroCalificaciones2.obtenerNombreDelCurso());
+    } // fin de main
+} // fin de la clase PruebaLibroCalificaciones                                       
+
+                                        </code></pre>
+ 
+				</section>
+
+				<section>
+					<h3>Constructores - UML</h3>
+                                        <hr />
+					<img width="100%" height="100%" data-src="Diagrama4.jpg" alt="Down arrow">
+				</section>
+                                <section>
+					<h3>Paquetes</h3>
+                                        <hr />
+                                        <small>
+                                        <ul>
+                                            <li>A medida que las aplicaciones se vuelven más complejas, los paquetes ayudan a los programadores a administrar la complejidad de los componentes de una aplicación</li>
+                                            <li>Los paquetes también facilitan la reutilización de software</li>
+                                        </ul>
+                                        </small>
+				</section>
+                <section>
+					<h3>Paquetes</h3>
+                                        <hr />
+                                        <small>
+					    <img width="100%" height="100%" data-src="paquetes1.png" alt="Down arrow">
+                                        </small>
+
+				</section>
+				
+				<section>
+					<h3>SobreCarga de Métodos</h3>
+                    <pre><code class="hljs" data-trim contenteditable>
+
+public void agregar_nombres(String n){
+        nombres = n;
+}
+    
+public void agregar_nombres(String n1, String n2){
+        nombres = String.format("%s-%s", n1, n2);
+}
+
+                    </code></pre>             
+
+				</section>
+
+				<section>
+					<h3>Método toString</h3>
+                        <hr />
+                        <small>
+					    <img width="100%" height="100%" data-src="images/img-to-string.png" alt="Down arrow">
+                        </small>
+
+				</section>
+
+				<section>
+					<h3>Herencia</h3>
+                        <hr />
+                        <small>
+					    <img width="100%" height="100%" data-src="images/herencia1.png" alt="Down arrow">
+                        </small>
+
+				</section>
+				<section>
+					<h3>Herencia - 2</h3>
+                        <hr />
+                        <small>
+					    <img width="100%" height="100%" data-src="images/herencia-2.png" alt="Down arrow">
+                        </small>
+
+				</section>
+
+				<section>
+					<h3>Herencia - UML</h3>
+                        <hr />
+                        <small>
+					    <img width="100%" height="100%" data-src="images/ejemplo-herencia.png" alt="Down arrow">
+                        </small>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
